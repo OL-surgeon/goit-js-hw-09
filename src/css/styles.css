@@ -1,7 +1,32 @@
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
-
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+p:last-child {
+  margin-bottom: 0;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+button {
+  cursor: pointer;
+}
 body {
   margin: 16px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
@@ -12,60 +37,114 @@ body {
   color: #212121;
   line-height: 1.5;
 }
+img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.3s ease;
+}
+img:hover {
+  transform: scale(1.05);
+}
 .gallery {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  max-width: 1128px;
+  margin: 0 auto;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  justify-content: center;
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
 }
-
-.gallery-item {
-  flex: 1 0 calc(33.33% - 24px);
-  max-width: calc(33.33% - 24px);
-  height: auto;
-  box-sizing: border-box;
+.modal {
+  background-color: bisque;
 }
-
-.gallery-link {
-  display: block;
-}
-
-.gallery-image {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+button {
+  cursor: pointer;
   border-radius: 8px;
-  transition: transform 0.3s ease;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+  border: none;
+  background-color: #4e75ff;
+  padding: 8px 16px;
 }
-
-.gallery-image:hover {
-  transform: scale(1.05);
+button:hover {
+  background-color: #6c8cff;
 }
-
-.modal-image {
-  display: block;
-  max-width: 90vw;
-  max-height: 90vh;
-  margin: auto;
+.input {
+  border: 1px solid #808080;
+  border-radius: 4px;
+  padding: 8px 16px;
+  outline: none;
+  resize: none;
+}
+.input::placeholder {
+  color: transparent;
+}
+.input:focus::placeholder {
+  color: #2e2f42;
+}
+.input:hover {
+  border: 1px solid black;
+}
+.input:active {
+  border: 1px solid #808080;
+}
+.item ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.item li {
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  border: 1px solid #808080;
+  border-radius: 4px;
+  width: 360px;
+  height: 40px;
+  padding: 8px 16px;
+}
+.first-input {
+  width: 360px;
+  height: 40px;
+  margin-bottom: 16px;
+  padding: 8px 16px;
+}
+.first-input::placeholder {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+}
+.first-input-container {
+  margin: 24px;
 }
 .feedback-form {
   display: flex;
   flex-direction: column;
-  width: 300px;
-  gap: 10px;
 }
-input,
-textarea {
-  width: 100%;
-  padding: 5px;
+.feedback-form button {
+  width: 86px;
+  height: 40px;
+  margin-top: 16px;
 }
-button {
-  background-color: #007bff;
-  color: white;
-  padding: 10px;
-  border: none;
-  cursor: pointer;
+.feedback-form label {
+  display: flex;
+  flex-direction: column;
+  width: 360px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+}
+.feedback-form input {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  width: 360px;
+  height: 40px;
 }
