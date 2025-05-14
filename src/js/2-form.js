@@ -1,13 +1,14 @@
 const form = document.querySelector('.feedback-form');
-const formData = { email: '', message: '' };
 const storageKey = 'feedback-form-state';
+
+const formData = { email: '', message: '' };
 
 const saveToLocalStorage = () => {
   localStorage.setItem(storageKey, JSON.stringify(formData));
 };
 
 form.addEventListener('input', event => {
-  formData[event.target.name] = event.target.value;
+  formData[event.target.name] = event.target.value.trim(); // Видаляємо пробіли по краях
   saveToLocalStorage();
 });
 

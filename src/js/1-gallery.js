@@ -84,29 +84,9 @@ const galleryMarkup = images
   )
   .join('');
 
-gallery.insertAdjacentHTML('beforeend', galleryMarkup);
+galleryContainer.innerHTML = galleryMarkup;
 
-new SimpleLightbox('.gallery a', {
+const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: 250,
-  showCounter: false,
-});
-
-const themeCheckbox = document.getElementById('theme-checkbox');
-const body = document.body;
-
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme) {
-  body.className = savedTheme;
-  themeCheckbox.checked = savedTheme === 'dark-theme';
-}
-
-themeCheckbox.addEventListener('change', () => {
-  if (themeCheckbox.checked) {
-    body.className = 'dark-theme';
-    localStorage.setItem('theme', 'dark-theme');
-  } else {
-    body.className = 'light-theme';
-    localStorage.setItem('theme', 'light-theme');
-  }
 });
